@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelBloom - Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro">
+    <h1>Welcome to TravelBloom!</h1>
+    <p>Your personalized guide to the world’s most exciting destinations.</p>
+    <input type="text" id="search-bar" placeholder="Search destinations...">
+    <button onclick="searchDestinations()">Search</button>
+  </section>
+
+  <section class="recommendations">
+    <h2>Popular Recommendations</h2>
+    <div class="destination" id="beach">
+      <h3>Beach Destinations</h3>
+      <img src="assets/images/beach1.jpg" alt="Beach 1">
+      <img src="assets/images/beach2.jpg" alt="Beach 2">
+    </div>
+    <div class="destination" id="temple">
+      <h3>Temple Destinations</h3>
+      <img src="assets/images/temple1.jpg" alt="Temple 1">
+      <img src="assets/images/temple2.jpg" alt="Temple 2">
+    </div>
+    <div class="destination" id="country">
+      <h3>Country-based Recommendations</h3>
+      <img src="assets/images/country1.jpg" alt="Country 1">
+      <img src="assets/images/country2.jpg" alt="Country 2">
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
