@@ -54,9 +54,31 @@ nav ul li button:hover {
     background-color: #555;
 }
 
+/* Social Media Icons */
+.social-media-icons {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.social-icon {
+    display: block;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0073e6; /* Change color on hover */
+}
+
 /* Background image and intro section */
 .intro {
-    background-image: url('assets/images/intro-bg.jpg'); /* Add your background image here */
+    background-image: url('https://miro.medium.com/v2/resize:fit:1400/0*pwlxpmyUbWmTDVJR'); /* Background image from the URL */
     background-size: cover;
     background-position: center;
     color: white;
@@ -87,26 +109,6 @@ nav ul li button:hover {
     margin-bottom: 30px;
     max-width: 800px;
     line-height: 1.6;
-}
-
-.intro input, .intro button {
-    margin-top: 10px;
-    padding: 12px 20px;
-    font-size: 16px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.intro button {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.intro button:hover {
-    background-color: #555;
 }
 
 /* Popular recommendations section */
