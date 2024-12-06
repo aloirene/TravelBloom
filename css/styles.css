@@ -4,13 +4,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url('https://miro.medium.com/v2/resize:fit:1400/0*pwlxpmyUbWmTDVJR');
+    background-size: cover; /* Makes sure the background covers the entire page */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Ensures the background stays fixed when scrolling */
 }
 
 /* Navigation bar */
 nav ul {
     list-style: none;
     padding: 10px;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     margin: 0;
     text-align: center;
     display: flex;
@@ -28,6 +32,24 @@ nav ul li a {
     color: white;
     text-decoration: none;
     padding: 10px;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    color: white; /* Text color white to stand out against the background */
+    padding: 100px 20px; /* Padding to position the text nicely */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background to make the text more readable */
+    margin-top: 50px; /* Adds a bit of space before the intro section */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+.intro h1 {
+    font-size: 40px;
+}
+
+.intro p {
+    font-size: 20px;
 }
 
 /* About Us Section */
