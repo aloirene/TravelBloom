@@ -7,21 +7,32 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <!-- Adding search bar and buttons to the nav -->
+      <li>
+        <input type="text" id="search-bar" placeholder="Search destinations...">
+      </li>
+      <li>
+        <button onclick="searchDestinations()">Search</button>
+      </li>
+      <li>
+        <button onclick="clearSearch()">Clear</button>
+      </li>
     </ul>
   </nav>
 
+  <!-- Introduction Section -->
   <section class="intro">
     <h1>Welcome to TravelBloom!</h1>
     <p>Your personalized guide to the world’s most exciting destinations.</p>
-    <input type="text" id="search-bar" placeholder="Search destinations...">
-    <button onclick="searchDestinations()">Search</button>
   </section>
 
+  <!-- Popular Recommendations -->
   <section class="recommendations">
     <h2>Popular Recommendations</h2>
     <div class="destination" id="beach">
