@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -15,13 +16,26 @@
     </ul>
   </nav>
 
+  <!-- Contact Us Section -->
   <section class="contact-us">
     <h1>Contact Us</h1>
+    <p>If you have any questions or need assistance, feel free to reach out to us using the form below. We would love to hear from you!</p>
+
+    <!-- Contact Form -->
     <form action="mailto:contact@travelbloom.com" method="post" enctype="text/plain">
+      <!-- Name Input -->
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+
+      <!-- Email Input -->
       <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required><br>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+
+      <!-- Message Textarea -->
       <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="4" required></textarea><br>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea><br>
+
+      <!-- Submit Button -->
       <input type="submit" value="Send Message">
     </form>
   </section>
