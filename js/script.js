@@ -119,7 +119,7 @@ function filterCategory(category, searchKeyword) {
   } else {
     return allRecommendations[category].filter(item => {
       return item.name.toLowerCase().includes(searchKeyword) || item.description.toLowerCase().includes(searchKeyword);
-    });
+    }).slice(0, 2); // Limit to at least 2 recommendations
   }
 }
 
