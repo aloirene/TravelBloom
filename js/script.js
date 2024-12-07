@@ -24,6 +24,8 @@ function fetchRecommendations() {
 // Display recommendations in the UI
 function displayRecommendations(recommendations) {
   recommendationsContainer.innerHTML = ''; // Clear the container before appending new content
+  
+  let resultsFound = false; // Flag to check if any results were found
 
   // Create a function to display recommendations based on category
   function displayCategory(category) {
@@ -44,6 +46,7 @@ function displayRecommendations(recommendations) {
             <p>${city.description}</p>
           `;
           recommendationsContainer.appendChild(cityDiv);
+          resultsFound = true;
         });
       } else {
         recommendationDiv.innerHTML = `
@@ -52,6 +55,7 @@ function displayRecommendations(recommendations) {
           <p>${description}</p>
         `;
         recommendationsContainer.appendChild(recommendationDiv);
+        resultsFound = true;
       }
     });
   }
@@ -60,21 +64,47 @@ function displayRecommendations(recommendations) {
   displayCategory('beaches');
   displayCategory('temples');
   displayCategory('countries');
+
+  // If no results were found, display a "no results" message
+  if (!resultsFound) {
+    const noResultsMessage = document.createElement('p');
+    noResultsMessage.textContent = 'No results found. Please try a different search.';
+    recommendationsContainer.appendChild(noResultsMessage);
+  }
 }
 
 // Search for recommendations based on the user input
 function searchDestinations() {
   const searchKeyword = searchInput.value.toLowerCase().trim(); // Convert to lowercase and remove extra spaces
 
+  // Normalize singular/plural variations
+  const normalizedSearchKeyword = normalizeKeyword(searchKeyword);
+
   // Filter recommendations by matching category names or description to the search input
   const filteredRecommendations = {
-    beaches: filterCategory('beaches', searchKeyword),
-    temples: filterCategory('temples', searchKeyword),
-    countries: filterCategory('countries', searchKeyword),
+    beaches: filterCategory('beaches', normalizedSearchKeyword),
+    temples: filterCategory('temples', normalizedSearchKeyword),
+    countries: filterCategory('countries', normalizedSearchKeyword),
   };
 
   // Display filtered results
   displayRecommendations(filteredRecommendations);
+}
+
+// Function to normalize search input (handle plural/singular variations)
+function normalizeKeyword(keyword) {
+  const pluralToSingular = {
+    beaches: 'beach',
+    temples: 'temple',
+    countries: 'country'
+  };
+
+  // Handle plural to singular conversion if the search keyword is plural
+  if (pluralToSingular[keyword]) {
+    return pluralToSingular[keyword];
+  }
+
+  return keyword;
 }
 
 // Function to filter recommendations by category (beaches, temples, countries)
